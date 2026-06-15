@@ -1,0 +1,77 @@
+/*
+  STILL SALT FUNCTION CORE — NO DESIGN BUILD
+  ------------------------------------------------------------
+  This file is intentionally plain. It exists only to keep the
+  connected buttons, IDs, panels, and states visible/testable.
+
+  NEXT BUILDER MUST NOT COPY THIS VISUAL STYLE.
+  Replace all visual styling with the locked reference design.
+*/
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  --border: #999;
+  --bg: #fff;
+  --muted: #f3f3f3;
+  --text: #111;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; border: 1px solid #555; background: #eee; padding: 0.55rem 0.75rem; }
+button.active { outline: 3px solid #111; }
+input, textarea, select { width: 100%; border: 1px solid #777; padding: 0.55rem; background: #fff; }
+textarea { min-height: 90px; resize: vertical; }
+
+.wire-note { margin: 0 0 .5rem; padding: .4rem .55rem; background: #fff3cd; border: 1px solid #d7b600; font-size: .85rem; font-weight: 700; }
+.hidden { display: none !important; }
+.boot-screen { min-height: 110px; padding: 1rem; border-bottom: 2px solid #111; background: #fafafa; }
+.boot-orb-wake { width: 42px; height: 42px; padding: 0; border-radius: 999px; font-weight: 700; }
+.boot-status { margin-top: .5rem; }
+
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.topbar { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; border-bottom: 2px solid #111; background: #f7f7f7; }
+.brand-kicker { font-size: .85rem; font-weight: 700; letter-spacing: .08em; }
+h1, h2 { margin: .1rem 0 .5rem; }
+.status-stack { display: flex; flex-wrap: wrap; gap: .35rem; align-content: flex-start; }
+.status-pill { border: 1px solid #666; padding: .25rem .45rem; background: #fff; font-size: .8rem; }
+.status-pill.ghost { opacity: .6; }
+
+.dashboard-grid { flex: 1; display: grid; grid-template-columns: 240px minmax(320px, 1fr) 240px; gap: 1rem; padding: 1rem; }
+.side-rail { display: grid; gap: 1rem; align-content: start; }
+.slot-card, .workspace, .orb-stage { border: 2px dashed var(--border); background: var(--muted); padding: 1rem; }
+.center-stage { display: grid; gap: 1rem; align-content: start; }
+.center-stage.workspace-open { grid-template-columns: minmax(180px, 28%) minmax(320px, 1fr); align-items: start; }
+.orb-stage { min-height: 320px; display: grid; place-items: center; text-align: center; }
+.orb-shell { position: relative; width: 220px; height: 220px; border: 2px solid #111; border-radius: 50%; display: grid; place-items: center; background: #fff; }
+.orb-ring { position: absolute; inset: 16px; border: 1px dashed #555; border-radius: 50%; display: grid; place-items: center; font-size: .7rem; color: #555; }
+.outer-ring { inset: 4px; }
+.inner-ring { inset: 38px; }
+.orb-core { position: relative; z-index: 2; width: 92px; height: 92px; border: 1px solid #111; border-radius: 50%; display: grid; place-items: center; align-content: center; background: #fff; }
+.orb-ss { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.orb-label { font-size: .7rem; font-weight: 700; }
+.talking-box { margin-top: 1rem; border: 1px solid #111; padding: .6rem; background: #fff; min-width: 220px; }
+
+.workspace[hidden], .workspace-panel { display: none; }
+.workspace-panel.active { display: block; }
+.workspace-head { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #999; padding-bottom: .75rem; margin-bottom: .75rem; }
+.workspace-tabs { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .75rem; }
+.workspace-tabs button.active { background: #ddd; }
+.panel-actions, .command-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0; }
+.command-row input { flex: 1 1 280px; }
+.results-summary, .runner-log, .chat-log { border: 1px solid #aaa; background: #fff; padding: .75rem; margin: .75rem 0; min-height: 44px; }
+.product-board, .website-grid { display: grid; gap: .5rem; }
+.product-card, .site-card { border: 1px solid #aaa; background: #fff; padding: .75rem; }
+.inline-check { display: flex; align-items: center; gap: .5rem; margin: .75rem 0; }
+.inline-check input { width: auto; }
+
+.command-dock { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: .5rem; padding: 1rem; border-top: 2px solid #111; background: #f7f7f7; position: sticky; bottom: 0; }
+.dock-btn { min-height: 56px; }
+.danger { border-color: #900; }
+
+@media (max-width: 900px) {
+  .dashboard-grid, .center-stage.workspace-open { grid-template-columns: 1fr; }
+  .command-dock { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+}

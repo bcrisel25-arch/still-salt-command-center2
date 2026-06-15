@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Emergency Stop</title>
+  <style>
+    body{font-family:system-ui,sans-serif;background:#071014;color:#eefcff;width:300px;margin:0;padding:14px}
+    h1{font-size:17px;margin:0 0 10px;color:#ff385d}
+    button{margin-top:9px;width:100%;border:0;border-radius:999px;background:#ff385d;color:white;font-weight:900;padding:14px;cursor:pointer}
+    p{font-size:12px;color:#b8d7dc;line-height:1.35}
+    .status{padding:9px;border-radius:10px;background:rgba(255,56,93,.08);border:1px solid rgba(255,56,93,.25)}
+  </style>
+</head>
+<body>
+  <h1>Emergency Stop</h1>
+  <p>The app controls the scan. This popup is only for stopping the runner immediately.</p>
+  <button id="emergencyStop">STOP RUNNER</button>
+  <p id="status" class="status">Ready.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

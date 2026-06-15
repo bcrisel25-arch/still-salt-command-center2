@@ -1,0 +1,13 @@
+{
+  "name": "still-salt-core-connected-shell",
+  "version": "1.0.0",
+  "description": "Stripped Still Salt Command Center shell with preserved connected functions and single dashboard target.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check app.js && node --check chrome-extension/background.js && node --check chrome-extension/content.js && node --check chrome-extension/app-bridge.js && node --check chrome-extension/popup.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

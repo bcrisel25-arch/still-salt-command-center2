@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Still Salt Command Center — Function Core</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="bootScreen" class="boot-screen" aria-live="polite">
+    <p class="wire-note">FUNCTION CORE ONLY — BOOT PLACEHOLDER. NEXT BUILDER DESIGNS BLACK SCREEN + TINY CENTERED STILL SALT ORB WAKE TARGET.</p>
+    <button id="bootOrbWakeBtn" class="boot-orb-wake" aria-label="Wake Still Salt Command Center orb">SS</button>
+    <div id="bootStatus" class="boot-status">Boot sequence placeholder. Connected tiny orb wake target is present.</div>
+  </div>
+
+  <main id="app" class="app-shell" data-state="idle">
+    <header class="topbar" data-design-slot="final-header">
+      <div>
+        <div class="brand-kicker">STILL SALT</div>
+        <h1>COMMAND CENTER</h1>
+        <p class="wire-note">Header placement only. Do not copy this visual style.</p>
+      </div>
+      <div class="status-stack" data-design-slot="status-badges">
+        <span id="stateBadge" class="status-pill">IDLE</span>
+        <span id="backendBadge" class="status-pill ghost">BACKEND UNKNOWN</span>
+        <span id="extensionBadge" class="status-pill ghost">EXTENSION WAITING</span>
+      </div>
+    </header>
+
+    <section class="dashboard-grid" data-design-slot="single-dashboard-layout">
+      <aside class="side-rail left-rail" aria-label="Left dashboard function slots">
+        <section class="slot-card"><h2>System Status Slot</h2><p id="systemStatus">Connected shell online. Replace this card visually only.</p></section>
+        <section class="slot-card"><h2>Product Metrics Slot</h2><p><span id="metricProducts">0</span> products loaded</p><p><span id="metricSellNow">0</span> sell-now candidates</p></section>
+        <section class="slot-card"><h2>Runner Status Slot</h2><p id="runnerStatus">Open a data site, then run TikTok or Amazon scan.</p></section>
+      </aside>
+
+      <section id="centerStage" class="center-stage" data-design-slot="orb-and-workspace-zone">
+        <div id="orbStage" class="orb-stage" aria-label="Still Salt active two-layer AI orb placeholder">
+          <p class="wire-note">ORB PLACEHOLDER ONLY — next builder creates giant two-layer electric orb from references.</p>
+          <div class="orb-shell" id="stillSaltOrb" data-design-slot="two-layer-orb">
+            <div class="orb-ring outer-ring" aria-hidden="true">OUTER RING SLOT</div>
+            <div class="orb-ring inner-ring" aria-hidden="true">INNER RING SLOT</div>
+            <div class="orb-core">
+              <div class="orb-ss">SS</div>
+              <div class="orb-label">STILL SALT</div>
+            </div>
+          </div>
+          <div id="smallTalkingBox" class="talking-box" hidden>
+            <span id="talkingText">Still Salt is ready.</span>
+          </div>
+        </div>
+
+        <section id="workspace" class="workspace" hidden aria-label="Center results and launcher workspace">
+          <div class="workspace-head">
+            <div>
+              <h2 id="workspaceTitle">Results / Launchpad</h2>
+              <p id="workspaceSubtitle">Center panel opens here. Orb docks aside but remains active.</p>
+            </div>
+            <button id="minimizeWorkspaceBtn" class="mini-btn">Minimize</button>
+          </div>
+
+          <nav class="workspace-tabs" aria-label="Workspace sections">
+            <button data-panel="resultsPanel" class="active">Results</button>
+            <button data-panel="launcherPanel">Websites</button>
+            <button data-panel="agentPanel">Brain</button>
+            <button data-panel="intakePanel">Intake / Export</button>
+            <button data-panel="settingsPanel">Settings</button>
+          </nav>
+
+          <section id="resultsPanel" class="workspace-panel active">
+            <div class="panel-actions">
+              <button id="exportJsonBtn">Export JSON</button>
+              <button id="exportCsvBtn">Export CSV</button>
+              <button id="sendMakeBtn">Send Results to Make</button>
+              <button id="clearResultsBtn" class="danger">Clear Results</button>
+            </div>
+            <div id="resultsSummary" class="results-summary">No product data loaded yet.</div>
+            <div id="productBoard" class="product-board"></div>
+          </section>
+
+          <section id="launcherPanel" class="workspace-panel">
+            <div class="command-row">
+              <input id="siteCommandInput" placeholder="Type: open ChatGPT, launch Replit, go to Google Drive..." />
+              <button id="openSiteCommandBtn">Open</button>
+              <button id="voiceSiteCommandBtn">Voice Open</button>
+            </div>
+            <div id="launcherStatus" class="runner-log">Say or type a site name. Popup blockers may require clicking the generated fallback link.</div>
+            <div id="websiteGrid" class="website-grid"></div>
+          </section>
+
+          <section id="agentPanel" class="workspace-panel">
+            <label for="agentPrompt">Talk or type to Still Salt</label>
+            <textarea id="agentPrompt" placeholder="Ask Still Salt anything. Example: open Claude, summarize results, what should I sell next?"></textarea>
+            <div class="panel-actions">
+              <button id="askAgentBtn">Ask Still Salt</button>
+              <button id="voiceAgentBtn">Voice to Brain</button>
+              <button id="clearAgentBtn" class="ghost-btn">Clear Chat</button>
+            </div>
+            <div id="agentChatLog" class="chat-log"></div>
+          </section>
+
+          <section id="intakePanel" class="workspace-panel">
+            <p class="hint">Paste official exports, visible-page scanner rows, CSV, JSON, or Google Sheet CSV text.</p>
+            <textarea id="rawInput" placeholder="Paste CSV or JSON rows here..."></textarea>
+            <div class="panel-actions">
+              <button id="parseReplaceBtn">Parse + Replace</button>
+              <button id="parseAppendBtn">Parse + Append</button>
+              <button id="loadSampleBtn" class="ghost-btn">Load Sample</button>
+            </div>
+          </section>
+
+          <section id="settingsPanel" class="workspace-panel">
+            <label>Make Webhook URL</label>
+            <input id="makeWebhookUrl" placeholder="https://hook.us2.make.com/..." />
+            <label>Agent mood</label>
+            <select id="agentMood">
+              <option value="balanced">Balanced</option>
+              <option value="funny">Funny</option>
+              <option value="dry_sarcastic">Dry sarcastic</option>
+              <option value="sour">Sour</option>
+              <option value="bunny">Bunny</option>
+              <option value="direct">Direct</option>
+            </select>
+            <label class="inline-check"><input id="useGoogleSearch" type="checkbox" checked /> Use Google Search grounding when backend supports it</label>
+            <label>Agent Memory</label>
+            <textarea id="agentMemory" placeholder="Brand rules, workflow rules, product lanes, preferences..."></textarea>
+            <button id="saveSettingsBtn">Save Settings</button>
+            <div id="settingsStatus" class="runner-log">Settings not saved yet.</div>
+          </section>
+        </section>
+      </section>
+
+      <aside class="side-rail right-rail" aria-label="Right dashboard function slots">
+        <section class="slot-card"><h2>Daily Briefing Slot</h2><p id="dailyBriefing">Time, tasks, updates, and alerts attach here.</p></section>
+        <section class="slot-card"><h2>Quick Brain Slot</h2><p>Ask the orb, open websites, inspect results, run scans.</p></section>
+        <section class="slot-card"><h2>Safe Scan Rule Slot</h2><p>Export/report first. Visible-page second. Hidden data never.</p></section>
+      </aside>
+    </section>
+
+    <footer class="command-dock" aria-label="Main command buttons">
+      <button id="tikTokScanBtn" class="dock-btn">TikTok <strong>SCAN</strong></button>
+      <button id="muteBtn" class="dock-btn">Mute <strong>INCOGNITO</strong></button>
+      <button id="resultsBtn" class="dock-btn results-dock">Results <strong>LAUNCHPAD</strong></button>
+      <button id="amazonScanBtn" class="dock-btn">Amazon <strong>SCAN</strong></button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

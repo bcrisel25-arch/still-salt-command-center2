@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Still Salt Command Center Runner",
+  "version": "2.0.0",
+  "description": "App-controlled visible-page product data runner for Still Salt Command Center.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Emergency Stop"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "app-bridge.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
